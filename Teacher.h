@@ -8,4 +8,8 @@ public:
     Teacher();
     ~Teacher();
 
+private:
+    int zp;
+    std::string subject;
+
 };

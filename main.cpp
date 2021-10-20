@@ -1,7 +1,7 @@
-
-
 #include <iostream>
 #include <vector>
+#include "Human.h"
+#include "Teacher.h"
 
 class Human
 {
@@ -38,45 +38,23 @@ int main()
     Teacher natalia;
     natalia.setSubject("English");
     natalia.setZp(19500);
-
     Teacher orest;
     orest.setZp(22000);
     orest.setSubject("French");
-    std::cout<<taras.getZp()<<std::endl;
-    std::cout<<natalia.getZp()<<std::endl;
-    std::cout<<orest.getZp()<<std::endl;
-    std::cout<<taras.getSubject()<<std::endl;
-    std::cout<<natalia.getSubject()<<std::endl;
-    std::cout<<orest.getSubject()<<std::endl;
+    std::vector <Teacher> students;
+    students.push_back(taras);
+    students.push_back(natalia);
+    students.push_back(orest);
 
+    for (auto const &element: students)
+    {
+        std::cout <<  element.name << std::endl;
+        std::cout <<  element.getSubject() << std::endl;
+        std::cout <<  element.age << std::endl;
+        std::cout <<  element.getZp() << "\n" << std::endl;
+    }
 }
 
-int Teacher::getZp() const
-{
-    return zp;
-}
 
-void Teacher::setZp(int newZp)
-{
-    zp = newZp;
-}
 
-const std::string &Teacher::getSubject() const
-{
-    return subject;
-}
 
-void Teacher::setSubject(const std::string &newSubject)
-{
-    subject = newSubject;
-}
-
-int Human::getAge() const
-{
-    return age;
-}
-
-void Human::setAge(int newAge)
-{
-    age = newAge;
-}
