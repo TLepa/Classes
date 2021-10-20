@@ -1,9 +1,13 @@
-#include <Teacher.h>
+#include "teacher.h"
+
+
 
 Teacher::Teacher()
 {
+    zp=0;
+}
 
-Teacher::getZp() const
+int Teacher::getZp() const
 {
     return zp;
 }
@@ -22,4 +26,4 @@ void Teacher::setSubject(const std::string &newSubject)
 {
     subject = newSubject;
 }
-};
+//Задание-данніе приходят с консоли через комнад лайн парсер

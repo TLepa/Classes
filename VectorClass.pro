@@ -4,10 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        Human.cpp \
+        human.cpp \
         main.cpp \
         teacher.cpp
 
 HEADERS += \
-    Human.h \
-    Teacher.h
+    human.h \
+    teacher.h
