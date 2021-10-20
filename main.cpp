@@ -5,8 +5,15 @@
 
 class Human
 {
+public:
+    int getAge() const;
+    void setAge(int newAge);
+
+
     int age;
     std::string name;
+
+
 };
 
 class Teacher : public Human
@@ -62,4 +69,14 @@ const std::string &Teacher::getSubject() const
 void Teacher::setSubject(const std::string &newSubject)
 {
     subject = newSubject;
+}
+
+int Human::getAge() const
+{
+    return age;
+}
+
+void Human::setAge(int newAge)
+{
+    age = newAge;
 }
