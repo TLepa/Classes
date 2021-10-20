@@ -1,8 +1,7 @@
 #include <Teacher.h>
 
-class Teacher{
-
-
+Teacher::Teacher()
+{
 
 Teacher::getZp() const
 {

@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        Human.cpp \
         main.cpp \
         teacher.cpp
 
