@@ -1,36 +1,65 @@
+
+
 #include <iostream>
+#include <vector>
 
-
-void print()
+class Human
 {
-    std::cout << "Hello. Who are you? How old are you?" << std::endl;
-}
+    int age;
+    std::string name;
+};
 
-void split(std::string &answer, int &age)
+class Teacher : public Human
 {
-    answer.erase(0, 5);
-    std::string tempAnswer;
-    tempAnswer = answer;
-    int i = tempAnswer.find(' ');
-    tempAnswer.erase(tempAnswer.begin()+i-1, tempAnswer.end());
-    int y = answer.find("I am ");
-    answer.erase(0, y + sizeof ("I am"));
-    answer.erase(answer.begin()+2, answer.end());
-    age = atoi(answer.c_str());
-    answer = tempAnswer;
-}
+public:
+    int getZp() const;
+    void setZp(int newZp);
 
-void answer()
-{
-    print();
-    int age = 0;
-    std::string answer;
-    getline(std::cin, answer);
-    split(answer, age);
-    std::cout << answer << " " << age << " is the best age!!!!!!!!!!!!!!";
-}
+    const std::string &getSubject() const;
+    void setSubject(const std::string &newSubject);
+
+private:
+    int zp;
+    std::string subject;
+};
 
 int main()
 {
-    answer();
+    Teacher taras;
+    taras.setZp(19000);
+    taras.setSubject("Deutch");
+    Teacher natalia;
+    natalia.setSubject("English");
+    natalia.setZp(19500);
+
+    Teacher orest;
+    orest.setZp(22000);
+    orest.setSubject("French");
+    std::cout<<taras.getZp()<<std::endl;
+    std::cout<<natalia.getZp()<<std::endl;
+    std::cout<<orest.getZp()<<std::endl;
+    std::cout<<taras.getSubject()<<std::endl;
+    std::cout<<natalia.getSubject()<<std::endl;
+    std::cout<<orest.getSubject()<<std::endl;
+
+}
+
+int Teacher::getZp() const
+{
+    return zp;
+}
+
+void Teacher::setZp(int newZp)
+{
+    zp = newZp;
+}
+
+const std::string &Teacher::getSubject() const
+{
+    return subject;
+}
+
+void Teacher::setSubject(const std::string &newSubject)
+{
+    subject = newSubject;
 }
