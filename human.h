@@ -2,7 +2,7 @@
 #define HUMAN_H
 #include<string>
 #include <iostream>
-
+#include <fstream>
 
 
 class Human
